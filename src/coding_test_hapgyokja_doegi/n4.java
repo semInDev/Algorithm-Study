@@ -43,9 +43,4 @@ public class n4 {
             .mapToInt(Integer::intValue)
             .toArray();
     }
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	}
-
 }
