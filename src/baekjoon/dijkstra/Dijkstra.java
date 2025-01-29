@@ -2,7 +2,7 @@ package baekjoon.dijkstra;
 import java.util.*;
 import java.io.*;
 
-class Node implements Comparable<Node>{
+/*class Node implements Comparable<Node>{
 	int index;
 	int cost;
 	
@@ -15,7 +15,7 @@ class Node implements Comparable<Node>{
 	public int compareTo(Node o) {
 		return Integer.compare(this.cost, o.cost);
 	}
-}
+}*/
 
 public class Dijkstra {
 	static ArrayList<Node>[] graph;
