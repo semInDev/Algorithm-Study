@@ -2,10 +2,14 @@ package baekjoon.bellmanford;
 import java.util.*;
 import java.io.*;
 /* [bellman ford algorithm]
+ * 참고자료 1 - 벨만포드 학습 및 구현 코드 참고
  * https://velog.io/@suk13574/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98Java-%EB%B2%A8%EB%A7%8C-%ED%8F%AC%EB%93%9CBellman-Ford-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98
+ * 
+ * 참고자료 2 - 음의 사이클 체크 로직 참고
+ * https://youtu.be/Ppimbaxm8d8?si=TfmaxQsFTHYp-UKJ
  * */
 
-class Edge {
+/*class Edge {
 	int v; // 나가는 정점
 	int w; // 들어오는 정점
 	int cost;
@@ -15,7 +19,7 @@ class Edge {
 		this.w = w;
 		this.cost = cost;
 	}
-}
+}*/
 
 public class BellmanFord {
 	static ArrayList<Edge> graph;
@@ -36,20 +40,22 @@ public class BellmanFord {
 				//현재 간선의 들어오는 정점에 대해 비교
 				if (dist[edge.v] != INF && dist[edge.w] > dist[edge.v] + edge.cost) {
 					dist[edge.w] = dist[edge.v] + edge.cost;
+					if(i == n-1) {
+						System.out.println("음수 사이클 존재");
+						return false;
+					}
 				}
 			}
 		}
 		
 		//음수 가중치 확인
-		for (int i = 0; i < m; i++) {
-			Edge edge = graph.get(i); //현재 간선
-			
-			//현재 간선의 들어오는 정점에 대해 비교 -> 더 작은 값 생기면 음수 사이클 존재
-			if (dist[edge.v] != INF && dist[edge.w] > dist[edge.v] + edge.cost) {
-				System.out.println("음수 사이클 존재");
-				return false;
-			}
-		}
+		/*
+		 * for (int i = 0; i < m; i++) { Edge edge = graph.get(i); //현재 간선
+		 * 
+		 * //현재 간선의 들어오는 정점에 대해 비교 -> 더 작은 값 생기면 음수 사이클 존재 if (dist[edge.v] != INF &&
+		 * dist[edge.w] > dist[edge.v] + edge.cost) { System.out.println("음수 사이클 존재");
+		 * return false; } }
+		 */
 		
 		//출력
 		for (int i = 1; i < dist.length; i++) {
