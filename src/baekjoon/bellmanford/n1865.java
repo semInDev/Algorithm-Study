@@ -29,7 +29,7 @@ public class n1865 {
 				}
 			}
 			if(!update)
-				return false;
+				return false;//시간 초과 발생 예방
 		}
 		return false;
 	}
