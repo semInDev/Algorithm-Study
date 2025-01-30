@@ -2,14 +2,14 @@ package baekjoon.bellmanford;
 import java.util.*;
 import java.io.*;
 
-class Edge{
+/*class Edge{
 	int v, w, cost;
 	public Edge(int v, int w, int cost) {
 		this.v = v;
 		this.w = w;
 		this.cost = cost;
 	}
-}
+}*/
 
 public class n11657 {
 	static ArrayList<Edge> graph;
