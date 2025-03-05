@@ -14,10 +14,11 @@ public class ch3_4 {
 		while(N!=1) {
 			if(N % K == 0) {
 				N/=K;
+				cnt++;
 			}else {
-				N-=1;
+				cnt += N%K;
+				N -= (N%K);
 			}
-			cnt++;
 		}
 		
 		System.out.println(cnt);
