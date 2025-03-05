@@ -15,10 +15,12 @@ public class ch3_2 {
 			arr[i] = sc.nextInt();
 		}
 		Arrays.sort(arr);
+		int first = arr[N-1];
+		int second = arr[N-2];
 		
 		int output = 0;
-		output += M/(K+1)*(arr[N-1]*K+arr[N-2]);
-		output += M%(K+1)*(arr[N-1]*K);
+		output += M/(K+1)*(first*K+second);
+		output += M%(K+1)*(first*K);
 		System.out.println(output);
 		
 		sc.close();
