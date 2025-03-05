@@ -1,6 +1,7 @@
 package icoda.greedy;
 import java.util.*;
 
+//O(NlogN): N = arr.length, 정렬 시간
 public class ch3_2 {
 
 	public static void main(String[] args) {

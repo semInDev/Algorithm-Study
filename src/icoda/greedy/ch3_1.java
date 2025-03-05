@@ -1,6 +1,7 @@
 package icoda.greedy;
 import java.util.*;
 
+//O(K): K = 동전의 개수(arr.length)
 public class ch3_1 {
 
 	public static void main(String[] args) {
