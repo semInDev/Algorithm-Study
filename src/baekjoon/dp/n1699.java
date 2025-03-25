@@ -10,15 +10,15 @@ public class n1699 {
 		int N = Integer.parseInt(br.readLine());
 		
 		int[] dp = new int[N+1];
-		int max_square = 1;
-		dp[1] = 1;
-		for(int i=2; i<N+1; i++) {
-			if(Math.sqrt(i) % 1 == 0) {
+		for(int i=1; i<N+1; i++) {
+			dp[i] = i;
+			if(Math.sqrt(i)%1==0) {
 				dp[i] = 1;
-				max_square = i;
 				continue;
 			}
-			dp[i] = 1 + dp[i-max_square];
+			for(int j=1; i>j*j; j++) {
+				dp[i] = Math.min(dp[i], dp[i-j*j]+1);
+			}
 		}
 		
 		System.out.println(dp[N]);
