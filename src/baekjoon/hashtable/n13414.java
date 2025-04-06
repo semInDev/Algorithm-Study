@@ -29,6 +29,7 @@ public class n13414 {
 			}else { // strMap.containsKey(schoolNum))일 때
 				// orderMap에서 order을 뒤로 바꿔야 함 O(log L)
 				int preOrder = strMap.get(schoolNum); // 원래 order 찾기
+				strMap.remove(schoolNum);
 				orderMap.remove(preOrder);
 				orderMap.put(order++, schoolNum);
 			}
