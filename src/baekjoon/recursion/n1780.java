@@ -1,4 +1,4 @@
-package baekjoon.recursive;
+package baekjoon.recursion;
 
 import java.io.*;
 import java.util.*;

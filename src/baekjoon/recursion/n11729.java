@@ -1,4 +1,4 @@
-package baekjoon.recursive;
+package baekjoon.recursion;
 import java.io.*;
 
 public class n11729 {
