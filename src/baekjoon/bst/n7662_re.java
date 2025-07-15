@@ -16,31 +16,22 @@ public class n7662_re {
 			int k = Integer.parseInt(br.readLine());
 			while(k-->0) {
 				st = new StringTokenizer(br.readLine());
-				char cmd = st.nextToken().charAt(0); // 이거 어캐함
+				char cmd = st.nextToken().charAt(0);
 				int num = Integer.parseInt(st.nextToken());
 				
 				if(cmd == 'I') {
-					if(Q.containsKey(num)) {
-						Q.put(num, Q.get(num) + 1);
-					}else {
-						Q.put(num, 1);
-					}
+					Q.put(num, Q.getOrDefault(num, 0) + 1);
 				}else {
 					if(Q.isEmpty()) {
 						continue;
-					}else if(num == 1) {
-						if(Q.get(Q.lastKey()) == 1) {
-							Q.remove(Q.lastKey());
-						}else {
-							Q.put(Q.lastKey(), Q.get(Q.lastKey()) - 1);
-						}
-					}else {
-						if(Q.get(Q.firstKey()) == 1) {
-							Q.remove(Q.firstKey());
-						}else {
-							Q.put(Q.firstKey(), Q.get(Q.firstKey()) - 1);
-						}
 					}
+					int key = (num == 1) ? Q.lastKey() : Q.firstKey();
+                    int count = Q.get(key);
+                    if (count == 1) {
+                        Q.remove(key);
+                    } else {
+                        Q.put(key, count - 1);
+                    }
 				}
 			}
 			if(Q.isEmpty()) {
